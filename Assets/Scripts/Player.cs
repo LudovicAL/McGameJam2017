@@ -1,9 +1,14 @@
-﻿public class Player {
-	public string name {get; private set;}
+﻿using UnityEngine;
+
+public class Player {
+
+	public GameObject panelPlayerJoined {get; private set;}
+	public int id {get; private set;}
 	public Controller controller {get; private set;}
 
-	public Player(string name, Controller controller) {
-		this.name = name;
+	public Player(int id, Controller controller, GameObject panelPlayerJoined) {
+		this.id = id;
 		this.controller = controller;
+		this.panelPlayerJoined = panelPlayerJoined;
 	}
 }

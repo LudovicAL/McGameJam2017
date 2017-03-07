@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
 public class Controller {
-
 	//Player id
 	public string name {get; private set;}
 	//D-Pad
@@ -20,15 +19,12 @@ public class Controller {
 	public string buttonB {get; private set;}
 	public string buttonX {get; private set;}
 	public string buttonY {get; private set;}
-	//Triggers
-	public string lTrigger {get; private set;}
-	public string rTrigger {get; private set;}
 	//Bumpers
 	public string lBumper {get; private set;}
 	public string rBumper {get; private set;}
 	//Others
-	public string bStart {get; private set;}
-	public string bBack {get; private set;}
+	public string buttonStart {get; private set;}
+	public string buttonBack {get; private set;}
 
 	public Controller(string name) {
 		this.name = name;
@@ -44,11 +40,9 @@ public class Controller {
 		this.buttonB = name + "buttonB";
 		this.buttonX = name + "buttonX";
 		this.buttonY = name + "buttonY";
-		this.lTrigger = name + "lTrigger";
-		this.rTrigger = name + "rTrigger";
 		this.lBumper = name + "lBumper";
 		this.rBumper = name + "rBumper";
-		this.bStart = name + "bStart";
-		this.bBack = name + "bBack";
+		this.buttonStart = name + "buttonStart";
+		this.buttonBack = name + "buttonBack";
 	}
 }
