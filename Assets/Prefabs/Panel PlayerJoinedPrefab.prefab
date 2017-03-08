@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114270037535965770}
   - component: {fileID: 114327384199179046}
   m_Layer: 5
-  m_Name: Panel PlayerJoined
+  m_Name: Panel PlayerJoinedPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

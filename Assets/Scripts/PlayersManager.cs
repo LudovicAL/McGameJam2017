@@ -8,19 +8,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerManager : MonoBehaviour {
+public class PlayersManager : MonoBehaviour {
 
 	public GameObject panelPlayerJoinedPrefab;
 	public GameObject panelPlayerList;
 	public GameObject panelJoinGameInvite;
-	public int maxNumPlayers;
+	public int maxNumPlayers;	//Maximum is 11
 	public List<Player> listOfPlayers {get; private set;}
 	private List<Controller> listOfAvailableContollers;
 	private List<int> listOfAvailableIds;
+	private GameObject scriptsBucket;
+	private StaticData.AvailableGameStates gameState;
 
 	void Start () {
+		scriptsBucket = GameObject.Find ("ScriptsBucket");
+		scriptsBucket.GetComponent<GameStatesManager> ().MenuGameState.AddListener(OnMenu);
+		scriptsBucket.GetComponent<GameStatesManager> ().StartingGameState.AddListener(OnStarting);
+		scriptsBucket.GetComponent<GameStatesManager> ().PlayingGameState.AddListener(OnPlaying);
+		scriptsBucket.GetComponent<GameStatesManager> ().PausedGameState.AddListener(OnPausing);
+		SetCanvasState (scriptsBucket.GetComponent<GameStatesManager> ().gameState);
 		listOfAvailableIds = new List<int> ();
-		for (int id = 1; id <= maxNumPlayers; id++) {
+		for (int id = 1, max = Mathf.Min(maxNumPlayers, 11); id <= max; id++) {
 			listOfAvailableIds.Add (id);
 		}
 		listOfPlayers = new List<Player> ();
@@ -40,16 +48,18 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	void Update () {
-		foreach (Controller controller in listOfAvailableContollers) {
-			if (Input.GetButtonDown(controller.buttonA)) {
-				AddPlayer (controller);
-				break;
+		if (gameState == StaticData.AvailableGameStates.Menu) {
+			foreach (Controller controller in listOfAvailableContollers) {
+				if (Input.GetButtonDown(controller.buttonA)) {
+					AddPlayer (controller);
+					break;
+				}
 			}
-		}
-		foreach (Player player in listOfPlayers) {
-			if (Input.GetButtonDown(player.controller.buttonB)) {
-				RemovePlayer (player);
-				break;
+			foreach (Player player in listOfPlayers) {
+				if (Input.GetButtonDown(player.controller.buttonB)) {
+					RemovePlayer (player);
+					break;
+				}
 			}
 		}
 	}
@@ -78,5 +88,28 @@ public class PlayerManager : MonoBehaviour {
 		Destroy (player.panelPlayerJoined);
 		listOfPlayers.Remove (player);
 		panelJoinGameInvite.SetActive(true);
+	}
+
+	protected void OnMenu() {
+		SetCanvasState (StaticData.AvailableGameStates.Menu);
+
+	}
+
+	protected void OnStarting() {
+		SetCanvasState (StaticData.AvailableGameStates.Starting);
+
+	}
+
+	protected void OnPlaying() {
+		SetCanvasState (StaticData.AvailableGameStates.Playing);
+
+	}
+
+	protected void OnPausing() {
+		SetCanvasState (StaticData.AvailableGameStates.Paused);
+	}
+
+	public void SetCanvasState(StaticData.AvailableGameStates state) {
+		gameState = state;
 	}
 }
