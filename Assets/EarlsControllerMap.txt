@@ -1,0 +1,24 @@
+D-Pad Horizontal	5
+D-Pad Vertical		6
+
+Left JS Horizontal	1
+Left JS Vertical	2
+Left JS Press		10
+
+Right JS Horizontal	3
+Right JS Vertical	4
+Left JS Press		11
+
+Button A	1
+Button B	2
+Button X	0
+Button Y	3
+
+Left trigger	4
+Right Trigger	5
+
+Left Bumper	6
+Right Bumper	7
+
+Back	8
+Start	9
