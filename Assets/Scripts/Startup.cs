@@ -11,8 +11,10 @@ public class Startup : MonoBehaviour {
 		AstarPath pathEngine = GameObject.Find ("A*").GetComponent<AstarPath> ();
 		NavGraph graph = pathEngine.graphs [0];
 		NNInfo info = graph.GetNearest (new Vector3 (-49, 0, 15));
-		info.node.Tag = 0x1;
-		Debug.Log ("Startup node : " + info.node.GetHashCode());
+		if (Mathf.Sqrt (VectorMath.SqrDistanceXZ ((Vector3)info.node.position, new Vector3 (-49, 0, 15))) < 1) {
+			info.node.Tag = 0x1;
+			Debug.Log ("Startup node : " + info.node.GetHashCode ());
+		}
 	}
 	
 	// Update is called once per frame

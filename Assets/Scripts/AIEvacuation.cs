@@ -79,7 +79,7 @@ public class AIEvacuation : AIPath {
 				if (Mathf.Sqrt(VectorMath.SqrDistanceXZ (pos, path.vectorPath [i])) < distanceVision) {
 					GraphNode node = DonneNodeAvecPosition(path.vectorPath[i]);
 					if (node.Tag == 0x1) {
-						Debug.Log ("OMG, du danger!!!");
+						Debug.Log ("OMG, du danger!!! " + node.GetHashCode());
 						return node;
 					}
 				} else {
