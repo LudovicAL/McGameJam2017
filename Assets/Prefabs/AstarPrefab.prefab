@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1673244279667650}
+  m_RootGameObject: {fileID: 1573789928998760}
   m_IsPrefabParent: 1
---- !u!1 &1673244279667650
+--- !u!1 &1573789928998760
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4647928274253608}
-  - component: {fileID: 114903121387248254}
+  - component: {fileID: 4582054038012398}
+  - component: {fileID: 114432156036715434}
   m_Layer: 0
   m_Name: AstarPrefab
   m_TagString: Untagged
@@ -27,12 +27,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4647928274253608
+--- !u!4 &4582054038012398
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673244279667650}
+  m_GameObject: {fileID: 1573789928998760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,19 +40,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114903121387248254
+--- !u!114 &114432156036715434
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1673244279667650}
+  m_GameObject: {fileID: 1573789928998760}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   astarData:
-    dataString: UEsDBBQAAAgIAACYn+tQ5IDD8AEAAD8EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1U9ty2jAQ/RXGzyUDAUrpWwqBdiZtmJBOn4W0xjvIkkeXcsnw713JAjvO9EnyOWdXe3bXbxmzFXD3whzq7Gtv+KmXodUlOIP8Qe0kEDgg0CvMtSkfxQ7m2jpL8JJJC0QZ7UK0Iuitlx1TwCmd53D2LnTjoByY/6v6g7thFHrFJSsrEBs8Q6MfDq4RdItCpQUkTSicaynRpkoyd6oCkb2wU0akQEau4vtBWwDuCkcf9+3A5zy34FJNhp0WaKg5dcbsm3ZFyFQyu6+r+sukh5u/OuXPD2y/dpUbXX6/vlp7cQXyPdXHmXWthrbhxfuyvTowuWdbCX8KUL/0ymivBJGvxodQb+F+0Up1czYvgO8bXV1rB/TVx+EMmxFeovfjXGK5DcjduAU8HNEmOUEbqWPzZyENGBrTD/IQt8Sm5ISGun5beGW79jolYonGOqJSUuadfkK1XxkUbfUVX6B1T1hi3dywG8HhVnsT1Nlj7HtoiHdzbRREOPmuQDHpTmt613WXoMO1Xu4wS8advo4pcdcfqBMS4UY/GHSotT7cBr7zKN6vUzabjqdixGEsBIjPo1F/PNtOhjDl+RYmfPJllMV9Q0V1MbmuEyc7NBbVGFe0WyFjaGpvZVgV91sYdljhudStFqHK9YYbAPVcZ4iWLv8AUEsDBBQAAAgIAACYn+s1sAq+NAAAADcAAAASACQAZ3JhcGgwX2VkaXRvci5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1bKyU/OTk1RslIIKSpN1VFQKs7IL3etKClKBAq5JeYUg8QKMsvyS4B8JefUvJLUIqVaAFBLAwQUAAAICAAAmJ/r9mw9YWwAAAB5AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDWswBCQx0FpfSixIKMYqAQmFOamQJiRytZmpuYpxgnp5qkpKSmmBkb65pYJpkapponpyWlmiabWhgrxQLVl1QWpPol5qZC9AQklmSkZealZOal67kXZaa4g4xWiq0FAFBLAQItABQAAAgIAACYn+tQ5IDD8AEAAD8EAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+s1sAq+NAAAADcAAAASACQAAAAAAAAAAAAAAD0CAABncmFwaDBfZWRpdG9yLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAmJ/r9mw9YWwAAAB5AAAACQAkAAAAAAAAAAAAAADFAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAADAAMAHAEAAHwDAAAAAA==
+    dataString: UEsDBBQAAAgIAACYn+vGDPaV7QEAAEAEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1U9tuGjEQ/RXk5xJBgFL6lkKgldIGhVR9NvbsroXXXvlSLhH/3rHXgLNRn+w958x4zszsG6G2AeZeqBOafO0NP/WIsLoGZwR7UKUEBAcIeiUKbepHXsJcW2cRXlJpASmjXYhWCL31yCEFHNN5CmfvjDcGyoH5v6o/uBtGoVdM0roBvhEnuOmHg0sE3qJQaQ5JEwpnWkphUyXEHZtAkBd6JEhyQdFVfD9oKxBl5fDjPg98LgoLLtVk6HEhDDanzUi+aVeFTDW1u7aqv1R6uPprU/78wPZbV4XR9ffLq60XVwm2w/oYtS5raA4v3pft1Z7KHd1K+FOB+qVXRnvFkXw1PoR6C/eLLNXV2bwCtrvp2lo7oG8+Dmd4G+E5ej/Mpai3AbkbZ8DDQdgkR2gjdWz+LKQBg2P6gR7iltiUHNFQ128Lr7TM1ykRS2GsQyolpd7pJ6F2KyN4rr7gC2Hdk6hF29ywG8HhVnsT1OQx9j00xLu5NgoinHw3oKh0xzW+67pL0OGylzvMkjKnL2NK3OUH6oRE+KYfDDrUWu+vAy+94O/Xicym4ykfMRhzDvzzaNQfz7aTIUxZsYUJm3wZkbhvQmFdVK7bxMkOjiX3oHC5QsrQ1d7K0CYuODd0vxKnWmc9EqrQG2YA1HOW4vwPUEsDBBQAAAgIAACYn+s1sAq+NAAAADcAAAASACQAZ3JhcGgwX2VkaXRvci5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1bKyU/OTk1RslIIKSpN1VFQKs7IL3etKClKBAq5JeYUg8QKMsvyS4B8JefUvJLUIqVaAFBLAwQUAAAICAAAmJ/r9mw9YWwAAAB5AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDWswBCQx0FpfSixIKMYqAQmFOamQJiRytZmpuYpxgnp5qkpKSmmBkb65pYJpkapponpyWlmiabWhgrxQLVl1QWpPol5qZC9AQklmSkZealZOal67kXZaa4g4xWiq0FAFBLAQItABQAAAgIAACYn+vGDPaV7QEAAEAEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+s1sAq+NAAAADcAAAASACQAAAAAAAAAAAAAADoCAABncmFwaDBfZWRpdG9yLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAmJ/r9mw9YWwAAAB5AAAACQAkAAAAAAAAAAAAAADCAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAADAAMAHAEAAHkDAAAAAA==
     upgradeData: 
     data_backup: 
     file_cachedStartup: {fileID: 0}
@@ -83,16 +83,16 @@ MonoBehaviour:
     _AreaColors: []
   tagNames:
   - Basic Ground
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
-  - 10
+  - Burning Ground
+  - Burnt Ground
+  - Obstacle
+  - Unlocked Door
+  - Unlocked Window
+  - Locked Door
+  - Locked Window
+  - Wall
+  - Stair
+  - Exterior
   - 11
   - 12
   - 13
