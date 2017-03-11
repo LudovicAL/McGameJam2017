@@ -13,12 +13,14 @@ public class FireSpreader : MonoBehaviour {
 	private float endTime;
 	private float timeSinceLastSpread;
 	private GraphNode currentNode;
-	private List<GraphNode> intactNeighbors;
-	private AstarPath graphEngine;
+	private GridGraph gridGraph;
+	private List<GraphNode> neighborNodes;
 
 	void Start(){
-		currentNode = AstarPath.active.GetNearest (transform.position).node;
-		intactNeighbors = GetIntactNeighbors ();
+		gridGraph = AstarPath.active.astarData.gridGraph;
+		currentNode = gridGraph.GetNearest (transform.position).node;
+		int[] neighborNodesOffsets = gridGraph.neighbourOffsets;
+
 		endTime = Time.time + maxBurningTime;
 		timeSinceLastSpread = 0.0f;
 		chanceOfSpreadingToAdjacentTile = Mathf.Clamp (chanceOfSpreadingToAdjacentTile, 0.0f, 1.0f);
@@ -28,27 +30,26 @@ public class FireSpreader : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > endTime || intactNeighbors.Count == 0){
+		if (Time.time > endTime){
 			Destroy (this);
 		} else {
 			timeSinceLastSpread += Time.deltaTime;
 			if (timeSinceLastSpread < spreadingDelay) {
-				SpreadToIntactNeighbor ();
+				SpreadToNeighbor ();
 				timeSinceLastSpread = 0.0f;
 			}
 		}
 	}
 
-	private void SpreadToIntactNeighbor(){
+	private void SpreadToNeighbor(){
 		float rndF = Random.Range (0.0f, 1.0f);
 		if (rndF <= chanceOfSpreadingToAdjacentTile) {	//Fire is spreading!
-			int rndI = Random.Range(0, intactNeighbors.Count - 1);
-			GameObject.Instantiate (firePrefab, (Vector3)intactNeighbors [rndI].position, Quaternion.identity);
-			intactNeighbors.RemoveAt (rndI);
+			
 		}
 	}
 
 	private List<GraphNode> GetIntactNeighbors() {
-		return PathUtilities.BFS (currentNode, 1, 2);
+		List<GraphNode> neighborNodes = PathUtilities.BFS (currentNode, 1, 2);
+		return null;
 	}
 }
