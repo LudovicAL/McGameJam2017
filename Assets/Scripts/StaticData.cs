@@ -12,4 +12,10 @@ public static class StaticData {
 		Playing,	//Game is playing
 		Paused	//Game is paused
 	};
+
+	public enum AvailableFireState {
+		Intact,	//GameObject is un-burned
+		Burning,	//GameObject is burning
+		Burnt	//GameObject has burned already
+	};
 }
