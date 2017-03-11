@@ -12,13 +12,11 @@ public class FireSpreader : MonoBehaviour {
 	public float maxBurningTime;
 	private float endTime;
 	private float timeSinceLastSpread;
-	private FireManager fireManager;
 	private GraphNode currentNode;
 	private List<GraphNode> intactNeighbors;
 	private AstarPath graphEngine;
 
 	void Start(){
-		fireManager = GameObject.Find ("ScriptsBucket").GetComponent<FireManager> ();
 		currentNode = AstarPath.active.GetNearest (transform.position).node;
 		intactNeighbors = GetIntactNeighbors ();
 		endTime = Time.time + maxBurningTime;
@@ -46,7 +44,6 @@ public class FireSpreader : MonoBehaviour {
 		if (rndF <= chanceOfSpreadingToAdjacentTile) {	//Fire is spreading!
 			int rndI = Random.Range(0, intactNeighbors.Count - 1);
 			GameObject.Instantiate (firePrefab, (Vector3)intactNeighbors [rndI].position, Quaternion.identity);
-			fireManager.AddBurningNode (intactNeighbors [rndI]);
 			intactNeighbors.RemoveAt (rndI);
 		}
 	}
