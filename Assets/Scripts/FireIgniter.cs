@@ -37,7 +37,7 @@ public class FireIgniter : MonoBehaviour {
 					if (info.node != null) {
 						this.transform.position = (Vector3)info.node.position;
 						if (Input.GetMouseButtonDown(0)) {
-							Debug.Log ("MouseButtonDown");
+						
 						} else if (Input.GetMouseButtonUp(0)) {
 							Debug.Log ("MouseButtonUp");
 							numberOfIgnitions++;
