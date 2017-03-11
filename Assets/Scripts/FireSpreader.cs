@@ -16,11 +16,14 @@ public class FireSpreader : MonoBehaviour {
 	private GridGraph gridGraph;
 	private List<GraphNode> neighborNodes;
 
-	void Start(){
+	void Start() {
 		gridGraph = AstarPath.active.astarData.gridGraph;
 		currentNode = gridGraph.GetNearest (transform.position).node;
 		int[] neighborNodesOffsets = gridGraph.neighbourOffsets;
-
+		neighborNodes = new List<GraphNode> ();
+		foreach (int nno in neighborNodesOffsets) {
+			neighborNodes.Add(gridGraph.nodes[currentNode.NodeIndex + nno]);
+		}
 		endTime = Time.time + maxBurningTime;
 		timeSinceLastSpread = 0.0f;
 		chanceOfSpreadingToAdjacentTile = Mathf.Clamp (chanceOfSpreadingToAdjacentTile, 0.0f, 1.0f);
@@ -46,10 +49,5 @@ public class FireSpreader : MonoBehaviour {
 		if (rndF <= chanceOfSpreadingToAdjacentTile) {	//Fire is spreading!
 			
 		}
-	}
-
-	private List<GraphNode> GetIntactNeighbors() {
-		List<GraphNode> neighborNodes = PathUtilities.BFS (currentNode, 1, 2);
-		return null;
 	}
 }
