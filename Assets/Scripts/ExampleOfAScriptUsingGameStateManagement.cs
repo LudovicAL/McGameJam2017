@@ -20,7 +20,7 @@ public class ExampleOfAScriptUsingGameStateManagement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (gameState == StaticData.AvailableGameStates.Playing) {
-			//Do stuff
+			scriptsBucket.GetComponent<GameStatesManager> ().ChangeGameState (StaticData.AvailableGameStates.Playing);
 		}
 	}
 
