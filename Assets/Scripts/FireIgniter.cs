@@ -5,6 +5,9 @@ using Pathfinding;
 
 public class FireIgniter : MonoBehaviour {
 
+	public Sprite firePrefab;
+	public Sprite matche;
+	public Sprite ignitedMatche;
 	public int maxNumberOfIgnitions;
 	private GridGraph gridGraph;
 	private GameObject scriptsBucket;
@@ -37,9 +40,10 @@ public class FireIgniter : MonoBehaviour {
 					if (info.node != null) {
 						this.transform.position = (Vector3)info.node.position;
 						if (Input.GetMouseButtonDown(0)) {
-						
+							//this.GetComponent<SpriteRenderer> ().sprite = ignitedMatche;
 						} else if (Input.GetMouseButtonUp(0)) {
-							Debug.Log ("MouseButtonUp");
+							//this.GetComponent<SpriteRenderer> ().sprite = matche;
+							GameObject.Instantiate(firePrefab, this.transform.position, Quaternion.LookRotation(Vector3.up));
 							numberOfIgnitions++;
 						}
 					}
