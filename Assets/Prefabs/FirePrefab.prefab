@@ -111,14 +111,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1110548756539334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18b2ea201ce2cec42b8a02c1614dd137, type: 3}
+  m_Script: {fileID: 11500000, guid: f03b501be912844a4861f24d0cb353cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 1110548756539334}
   chanceOfSpreadingToAdjacentTile: 0.05
   chanceOfSpreadingToNPC: 0.2
   spreadingDelay: 3
-  maxBurningTime: 10
+  maxBurningTime: 15
 --- !u!198 &198357232715375752
 ParticleSystem:
   m_ObjectHideFlags: 1

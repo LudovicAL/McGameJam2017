@@ -12,10 +12,6 @@ public class GridManager : MonoBehaviour {
 	void Awake () {
 		tileList = new List<Tile> ();
 		walkableTileList = new List<Tile> ();
-	}
-
-	// Use this for initialization
-	void Start() {
 		foreach (Transform child in this.transform) {
 			tileList.Add (new Tile(child.gameObject));
 		}
@@ -67,7 +63,8 @@ public class GridManager : MonoBehaviour {
 	
 	//Finds a tile by its coordinates
 	public Tile FindTileByCoordinates(int coordX, int coordY) {
-		return tileList.Find(t => t.Equals(new Tile(coordX, coordY)));
+		Tile tile = tileList.Find(t => t.Equals(new Tile(coordX, coordY)));
+		return tile;
 	}
 
 	//Returns a list of all tiles of the specified type

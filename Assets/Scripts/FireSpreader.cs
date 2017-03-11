@@ -52,39 +52,6 @@ public class FireSpreader : MonoBehaviour {
 	}
 
 	private List<GraphNode> GetIntactNeighbors() {
-		List<GraphNode> listOfNodes = new List<GraphNode> ();
-		NNConstraint contrainte = new NNConstraint();
-		contrainte.constrainDistance = true;
-		contrainte.constrainWalkability = true;
-		contrainte.walkable = true;
-		AstarPath graphEngine = AstarPath.active;
-		graphEngine.maxNearestNodeDistance = 0.0f;
-		NNInfo info = graphEngine.graphs[0].GetNearestForce (transform.position + Vector3.right, contrainte);
-		if (info.node != null
-		    && !fireManager.burningNodes.Contains(info.node)
-		    && !fireManager.burntNodes.Contains(info.node)) {
-			listOfNodes.Add (info.node);
-		}
-		info = graphEngine.graphs[0].GetNearestForce (transform.position + Vector3.left, contrainte);
-		if (info.node != null
-		    && !fireManager.burningNodes.Contains(info.node)
-		    && !fireManager.burntNodes.Contains(info.node)) {
-			listOfNodes.Add (info.node);
-		}
-		info = graphEngine.graphs[0].GetNearestForce (transform.position + Vector3.forward, contrainte);
-		if (info.node != null
-		    && !fireManager.burningNodes.Contains(info.node)
-		    && !fireManager.burntNodes.Contains(info.node)) {
-			listOfNodes.Add (info.node);
-		}
-		info = graphEngine.graphs[0].GetNearestForce (transform.position + Vector3.back, contrainte);
-		if (info.node != null
-		    && !fireManager.burningNodes.Contains(info.node)
-		    && !fireManager.burntNodes.Contains(info.node)) {
-			listOfNodes.Add (info.node);
-		}
-		return listOfNodes;
+		return PathUtilities.BFS (currentNode, 1, 2);
 	}
-
-
 }
