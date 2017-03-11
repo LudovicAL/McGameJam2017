@@ -12,6 +12,7 @@ public class Startup : MonoBehaviour {
 		NavGraph graph = pathEngine.graphs [0];
 		NNInfo info = graph.GetNearest (new Vector3 (-49, 0, 15));
 		info.node.Tag = 0x1;
+		Debug.Log ("Startup node : " + info.node.GetHashCode());
 	}
 	
 	// Update is called once per frame
