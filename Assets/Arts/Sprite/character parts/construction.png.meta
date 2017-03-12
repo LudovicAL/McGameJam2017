@@ -1,9 +1,12 @@
 fileFormatVersion: 2
 guid: 41fe31b415d49444c96dbd953b0ef6c8
-timeCreated: 1489279148
+timeCreated: 1489282644
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: rArm_construction
+    21300002: body_construction
+    21300004: lArm_construction
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,13 +37,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 664
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -58,9 +61,64 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: rArm_construction
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 116
+        width: 73
+        height: 83
+      alignment: 9
+      pivot: {x: 0.770711, y: 0.8108465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: body_construction
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 13
+        width: 128
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lArm_construction
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 108
+        width: 61
+        height: 90
+      alignment: 9
+      pivot: {x: 0.25702503, y: 0.80496794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

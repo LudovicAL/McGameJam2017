@@ -1,9 +1,12 @@
 fileFormatVersion: 2
 guid: 4c54af9fdee51994984f2a0812676ae3
-timeCreated: 1489279149
+timeCreated: 1489282712
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: rArm_deathbyfire
+    21300002: body_deathbyfire
+    21300004: lArm_deathbyfire
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,13 +37,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 664
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -58,9 +61,64 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: rArm_deathbyfire
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 72
+        width: 84
+        height: 127
+      alignment: 9
+      pivot: {x: 0.80061084, y: 0.8674021}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: body_deathbyfire
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 9
+        width: 109
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lArm_deathbyfire
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 66
+        width: 80
+        height: 133
+      alignment: 9
+      pivot: {x: 0.33531722, y: 0.87559175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
