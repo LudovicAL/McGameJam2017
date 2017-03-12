@@ -74,7 +74,7 @@ public class AIEvacuation : AIPath {
 		int index = Random.Range (0, nodes.Count);
 		cibleIdle.transform.position = (Vector3)nodes [index].position;
 		this.target = cibleIdle.transform;
-		this.speed = Random.Range (Mathf.Max(1, (int)(this.originalSpeed * 0.25)), Mathf.Max(1, (int)(this.originalSpeed * 0.75)));
+		this.speed = Random.Range (Mathf.Max(1, (int)(this.originalSpeed * 0.25f)), Mathf.Max(1, (int)(this.originalSpeed * 0.75f)));
 	}
 
 	protected void ChercherDuDanger() {
