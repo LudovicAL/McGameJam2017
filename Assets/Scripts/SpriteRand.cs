@@ -9,7 +9,6 @@ public class SpriteRand : MonoBehaviour {
 
 	public Sprite[] rLeg_F,rLeg_M, lLeg_M, lLeg_F, hats ;
 
-	private Color[] clothingColors = new Color[4];
 	void Start () {
 
 
