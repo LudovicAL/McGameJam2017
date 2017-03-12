@@ -1,9 +1,12 @@
 fileFormatVersion: 2
 guid: 3e9768f075497b74e952b585ee0f3777
-timeCreated: 1489279148
+timeCreated: 1489283267
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: rLeg_jupe
+    21300002: crotch_jupe
+    21300004: lLeg_jupe
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,13 +37,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 664
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -58,9 +61,64 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: rLeg_jupe
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 27
+        width: 98
+        height: 165
+      alignment: 9
+      pivot: {x: 0.5728188, y: 0.8393459}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: crotch_jupe
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 53
+        width: 91
+        height: 144
+      alignment: 9
+      pivot: {x: 0.45777375, y: 0.7935314}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lLeg_jupe
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 22
+        width: 92
+        height: 150
+      alignment: 9
+      pivot: {x: 0.39856422, y: 0.8549824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
