@@ -189,7 +189,7 @@ namespace Pathfinding {
 				};
 			} else {
 				callback = node => {
-					if (node.Walkable && ((tagMask >> (int)node.Tag) & 0x1) != 0 && !map.ContainsKey(node)) {
+					if (node.Walkable && ((tagMask & node.Tag) == tagMask) && !map.ContainsKey(node)) {
 						map.Add(node, currentDist+1);
 						result.Add(node);
 						que.Enqueue(node);
