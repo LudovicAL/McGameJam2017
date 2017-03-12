@@ -191,7 +191,7 @@ public class AIEvacuation : AIPath {
 		} else {
 			filteredNodes = nodes;
 		}
-		return filteredNodes.Where(x => (x.Tag & 0x1) == 0x1);
+		return filteredNodes.Where(x => (x.Tag & StaticData.BURNING_GROUND) == StaticData.BURNING_GROUND);
 	}
 
 	public void OnMenu() {

@@ -28,7 +28,7 @@ public class FireSpreader : MonoBehaviour {
 		SetCanvasState (scriptsBucket.GetComponent<GameStatesManager> ().gameState);
 		gridGraph = AstarPath.active.astarData.gridGraph;
 		currentNode = gridGraph.GetNearest (transform.position).node;
-		currentNode.Tag = StaticData.BURNING_GROUND;
+		currentNode.Tag |= StaticData.BURNING_GROUND;
 		neighborFlammableNodes = PathUtilities.BFS (currentNode, 1);
 		endTime = Time.time + maxBurningTime;
 		timeSinceLastSpread = 0.0f;
