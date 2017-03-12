@@ -34,8 +34,10 @@ public class GameStatesManager : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetButtonDown("Cancel")) {
-			OnEscapeKeyPressed ();
+		if (Input.GetButtonDown ("Cancel")) {
+			if (gameState == StaticData.AvailableGameStates.Playing) {
+				ChangeGameState(StaticData.AvailableGameStates.Paused);
+			}
 		}
 	}
 

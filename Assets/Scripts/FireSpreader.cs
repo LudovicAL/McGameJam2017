@@ -16,8 +16,16 @@ public class FireSpreader : MonoBehaviour {
 	private GraphNode currentNode;
 	private GridGraph gridGraph;
 	private List<GraphNode> neighborFlammableNodes;
+	private GameObject scriptsBucket;
+	private StaticData.AvailableGameStates gameState;
 
 	void Start() {
+		scriptsBucket = GameObject.Find ("ScriptsBucket");
+		scriptsBucket.GetComponent<GameStatesManager> ().MenuGameState.AddListener(OnMenu);
+		scriptsBucket.GetComponent<GameStatesManager> ().StartingGameState.AddListener(OnStarting);
+		scriptsBucket.GetComponent<GameStatesManager> ().PlayingGameState.AddListener(OnPlaying);
+		scriptsBucket.GetComponent<GameStatesManager> ().PausedGameState.AddListener(OnPausing);
+		SetCanvasState (scriptsBucket.GetComponent<GameStatesManager> ().gameState);
 		gridGraph = AstarPath.active.astarData.gridGraph;
 		currentNode = gridGraph.GetNearest (transform.position).node;
 		currentNode.Tag = StaticData.BURNING_GROUND;
@@ -31,13 +39,15 @@ public class FireSpreader : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > endTime){
-			DestroyThisComponent();
-		} else {
-			timeSinceLastSpread += Time.deltaTime;
-			if (timeSinceLastSpread > spreadingDelay) {
-				SpreadToNeighbor ();
-				timeSinceLastSpread = 0.0f;
+		if (gameState == StaticData.AvailableGameStates.Playing) {
+			if (Time.time > endTime){
+				DestroyThisComponent();
+			} else {
+				timeSinceLastSpread += Time.deltaTime;
+				if (timeSinceLastSpread > spreadingDelay) {
+					SpreadToNeighbor ();
+					timeSinceLastSpread = 0.0f;
+				}
 			}
 		}
 	}
@@ -62,5 +72,28 @@ public class FireSpreader : MonoBehaviour {
 		currentNode.Tag ^= StaticData.BURNING_GROUND;
 		currentNode.Tag = StaticData.BURNT_GROUND;
 		Destroy (this.gameObject);
+	}
+
+	protected void OnMenu() {
+		SetCanvasState (StaticData.AvailableGameStates.Menu);
+
+	}
+
+	protected void OnStarting() {
+		SetCanvasState (StaticData.AvailableGameStates.Starting);
+
+	}
+
+	protected void OnPlaying() {
+		SetCanvasState (StaticData.AvailableGameStates.Playing);
+
+	}
+
+	protected void OnPausing() {
+		SetCanvasState (StaticData.AvailableGameStates.Paused);
+	}
+
+	public void SetCanvasState(StaticData.AvailableGameStates state) {
+		gameState = state;
 	}
 }
