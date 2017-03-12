@@ -18,7 +18,7 @@ public class FireIgniter : MonoBehaviour {
 	void Start () {
 		numberOfIgnitions = 0;
 		gridGraph = AstarPath.active.astarData.gridGraph;
-		scriptsBucket = GameObject.Find ("ScriptsBucket");
+		scriptsBucket = StaticData.GetScriptBucket ();
 		scriptsBucket.GetComponent<GameStatesManager> ().MenuGameState.AddListener(OnMenu);
 		scriptsBucket.GetComponent<GameStatesManager> ().StartingGameState.AddListener(OnStarting);
 		scriptsBucket.GetComponent<GameStatesManager> ().PlayingGameState.AddListener(OnPlaying);

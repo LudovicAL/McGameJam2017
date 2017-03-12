@@ -18,6 +18,14 @@ public static class StaticData {
 		Burning,	//GameObject is burning
 		Burnt	//GameObject has burned already
 	};
+
+	public static GameObject GetScriptBucket() {
+		GameObject obj = GameObject.Find ("ScriptBucket");
+		if (obj == null) {
+			obj = GameObject.Find ("ScriptsBucket");
+		}
+		return obj;
+	}
 		
 	public const int BURNING_GROUND = 0x1 << 0;
 	public const int BURNT_GROUND = 0x1 << 1;

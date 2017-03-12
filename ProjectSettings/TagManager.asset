@@ -8,6 +8,7 @@ TagManager:
   - Danger
   - Sortie de secours
   - Character
+  - ScriptBucket
   layers:
   - Default
   - TransparentFX

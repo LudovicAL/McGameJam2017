@@ -35,7 +35,7 @@ public class AIEvacuation : AIPath {
 		cibleIdle = new GameObject ();
 		changementComportement = true;
 		this.originalSpeed = speed;
-		scriptBucket = GameObject.Find ("ScriptBucket");
+		scriptBucket = StaticData.GetScriptBucket ();
 		GameStatesManager mgr = scriptBucket.GetComponent<GameStatesManager> ();
 		mgr.MenuGameState.AddListener (OnMenu);
 		mgr.StartingGameState.AddListener (OnStart);
@@ -73,7 +73,7 @@ public class AIEvacuation : AIPath {
 		int index = Random.Range (0, nodes.Count);
 		cibleIdle.transform.position = (Vector3)nodes [index].position;
 		this.target = cibleIdle.transform;
-		this.speed = Random.Range (1, (int)(this.originalSpeed * 0.75));
+		this.speed = Random.Range (Mathf.Max(1, (int)(this.originalSpeed * 0.25)), Mathf.Max(1, (int)(this.originalSpeed * 0.75)));
 	}
 
 	protected void ChercherDuDanger() {
