@@ -136,7 +136,7 @@ MonoBehaviour:
   chanceOfSpreadingToAdjacentTile: 0.2
   chanceOfSpreadingToNPC: 0.2
   spreadingDelay: 1
-  maxBurningTime: 5
+  maxBurningTime: 20
 --- !u!198 &198357232715375752
 ParticleSystem:
   m_ObjectHideFlags: 1

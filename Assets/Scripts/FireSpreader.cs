@@ -63,8 +63,8 @@ public class FireSpreader : MonoBehaviour {
 			List<GraphNode> neighborBurntNodes = PathUtilities.BFS (currentNode, 1, StaticData.BURNT_GROUND);
 			neighborFlammableNodes = neighborFlammableNodes.Except (neighborBurningNodes).ToList ().Except (neighborBurntNodes).ToList ();
 			if (neighborFlammableNodes.Count > 0) {
-				int rndI = Random.Range (0, neighborFlammableNodes.Count - 1);
-				neighborFlammableNodes [rndI].Tag = StaticData.BURNING_GROUND;
+				int rndI = Random.Range (0, neighborFlammableNodes.Count);
+				neighborFlammableNodes [rndI].Tag |= StaticData.BURNING_GROUND;
 				GameObject.Instantiate (firePrefab, (Vector3)neighborFlammableNodes [rndI].position, Quaternion.LookRotation(Vector3.down));
 			} else {
 				DestroyThisComponent();
@@ -74,7 +74,7 @@ public class FireSpreader : MonoBehaviour {
 
 	private void DestroyThisComponent() {
 		currentNode.Tag ^= StaticData.BURNING_GROUND;
-		currentNode.Tag = StaticData.BURNT_GROUND;
+		currentNode.Tag |= StaticData.BURNT_GROUND;
 		Destroy (this.gameObject);
 	}
 
