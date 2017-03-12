@@ -11,8 +11,8 @@ public class AIEvacuation : AIPath {
 	private List<GraphNode> dangersConnus;
 	private Seeker chercheur;
 	private Path cheminEnCours;
-	private bool signalEvacuation;
-	private bool signalAucuneIssue;
+	public bool signalEvacuation { get; private set; }
+	public bool signalAucuneIssue { get; private set; }
 	private GameObject cibleIdle;
 	private bool changementComportement;
 	private float originalSpeed;
