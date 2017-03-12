@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: e4b8664613158ce4a9e10ec159325fe5
-timeCreated: 1489279151
+timeCreated: 1489283771
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: rArm_tattoo
+    21300002: lArm_tattoo
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,13 +36,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 452
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -58,9 +60,51 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: rArm_tattoo
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 8
+        width: 100
+        height: 189
+      alignment: 9
+      pivot: {x: 0.89236116, y: 0.94683105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lArm_tattoo
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 6
+        width: 85
+        height: 190
+      alignment: 9
+      pivot: {x: 0.14390762, y: 0.9228453}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

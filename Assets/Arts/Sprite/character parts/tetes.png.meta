@@ -1,9 +1,31 @@
 fileFormatVersion: 2
 guid: ed149e3bd09808e478fdc0f77e6cc042
-timeCreated: 1489279152
+timeCreated: 1489284127
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tetes_0
+    21300002: head_man1
+    21300004: head_man1_burning
+    21300006: head_max
+    21300008: head_max_burning
+    21300010: tetes_5
+    21300012: head_lady1
+    21300014: head_lady1_burning
+    21300016: head_gab
+    21300018: head_gab_burning
+    21300020: head_man2
+    21300022: head_man2_burning
+    21300024: head_lady2
+    21300026: head_lady2_burning
+    21300028: head_lady3
+    21300030: head_lady3_burning
+    21300032: head_breadman
+    21300034: head_breadman_toast
+    21300036: head_trump
+    21300038: head_trump_burning
+    21300040: neck_white
+    21300042: neck_black
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,13 +56,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1024
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -58,9 +80,311 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tetes_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 992
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_man1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 908
+        width: 153
+        height: 165
+      alignment: 9
+      pivot: {x: 0.45305878, y: 0.15178148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_man1_burning
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 903
+        width: 178
+        height: 175
+      alignment: 9
+      pivot: {x: 0.4495644, y: 0.14089948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_max
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 886
+        width: 186
+        height: 188
+      alignment: 9
+      pivot: {x: 0.3938139, y: 0.18483199}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_max_burning
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 895
+        width: 203
+        height: 186
+      alignment: 9
+      pivot: {x: 0.45577568, y: 0.13317674}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tetes_5
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 908
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_lady1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 686
+        width: 200
+        height: 170
+      alignment: 9
+      pivot: {x: 0.43715727, y: 0.1620232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_lady1_burning
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 688
+        width: 226
+        height: 180
+      alignment: 9
+      pivot: {x: 0.43644214, y: 0.20074938}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_gab
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 687
+        width: 169
+        height: 181
+      alignment: 9
+      pivot: {x: 0.43625474, y: 0.17264317}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_gab_burning
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 679
+        width: 184
+        height: 182
+      alignment: 9
+      pivot: {x: 0.46096668, y: 0.20403817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_man2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 474
+        width: 137
+        height: 164
+      alignment: 9
+      pivot: {x: 0.4344705, y: 0.18250257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_man2_burning
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 479
+        width: 157
+        height: 174
+      alignment: 9
+      pivot: {x: 0.4199456, y: 0.14915448}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_lady2
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 463
+        width: 225
+        height: 195
+      alignment: 9
+      pivot: {x: 0.47964707, y: 0.12895179}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_lady2_burning
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 456
+        width: 218
+        height: 199
+      alignment: 9
+      pivot: {x: 0.50420135, y: 0.12720524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_lady3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 242
+        width: 230
+        height: 197
+      alignment: 9
+      pivot: {x: 0.47212538, y: 0.16061324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_lady3_burning
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 242
+        width: 218
+        height: 199
+      alignment: 9
+      pivot: {x: 0.4495848, y: 0.16402447}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_breadman
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 267
+        width: 141
+        height: 148
+      alignment: 9
+      pivot: {x: 0.46752238, y: 0.11632063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_breadman_toast
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 264
+        width: 141
+        height: 158
+      alignment: 9
+      pivot: {x: 0.40256625, y: 0.13480812}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_trump
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 38
+        width: 163
+        height: 157
+      alignment: 9
+      pivot: {x: 0.44943002, y: 0.16164987}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_trump_burning
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 34
+        width: 179
+        height: 169
+      alignment: 9
+      pivot: {x: 0.4488336, y: 0.16399713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: neck_white
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 81
+        width: 99
+        height: 97
+      alignment: 9
+      pivot: {x: 0.39472628, y: 0.46814442}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: neck_black
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 78
+        width: 87
+        height: 80
+      alignment: 9
+      pivot: {x: 0.38419947, y: 0.72897035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
