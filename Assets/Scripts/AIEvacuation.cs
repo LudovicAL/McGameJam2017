@@ -16,6 +16,8 @@ public class AIEvacuation : AIPath {
 	private float originalSpeed;
 	private StaticData.AvailableGameStates gameState;
 	private GameObject scriptBucket;
+	private Animator animator;
+	private float lastPositionX;
 
 	public int distanceVision = 5;
 
@@ -26,6 +28,8 @@ public class AIEvacuation : AIPath {
 
 	protected override void Start () {
 		base.Start ();
+		lastPositionX = transform.position.x;
+		animator = this.gameObject.GetComponentInChildren<Animator> ();
 		sorties = GameObject.Find ("Sorties de secours");
 		dangersConnus = new List<GraphNode> ();
 		chercheur = this.gameObject.AddComponent<Seeker> ();
@@ -91,6 +95,16 @@ public class AIEvacuation : AIPath {
 
 	public override void Update () {
 		if (gameState == StaticData.AvailableGameStates.Playing) {
+			if (transform.localScale.x > 0) { //If the character is looking left
+				if (transform.position.x > lastPositionX) { //But moving right
+					transform.localScale = new Vector3 (-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+				}
+			} else  { //If the character is looking right
+				if (transform.position.x < lastPositionX){ //But moving left
+					transform.localScale = new Vector3 (-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+				}
+			}
+			lastPositionX = transform.position.x;
 			if (changementComportement) {
 				changementComportement = false;
 				if (signalEvacuation) {
