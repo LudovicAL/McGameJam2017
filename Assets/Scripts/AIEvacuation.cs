@@ -33,6 +33,7 @@ public class AIEvacuation : AIPath {
 		signalEvacuation = false;
 		signalAucuneIssue = false;
 		cibleIdle = new GameObject ();
+		cibleIdle.transform.name = transform.name + " (Target)";
 		changementComportement = true;
 		this.originalSpeed = speed;
 		scriptBucket = StaticData.GetScriptBucket ();

@@ -32,7 +32,7 @@ public class ButtonHandlers : MonoBehaviour {
 	public void StartGame() {
 		ActivatePanel (PANEL_GAME);
 		stateMan.ChangeGameState(StaticData.AvailableGameStates.Playing);
-		GameObject.Instantiate (fireIgniterPrefab, Vector3.zero, Quaternion.identity);
+		GameObject.Instantiate (fireIgniterPrefab, Vector3.zero, Quaternion.LookRotation(Vector3.down));
 	}
 
 	public void Pause() {
