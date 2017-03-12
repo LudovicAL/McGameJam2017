@@ -12,9 +12,17 @@ public class CameraManager : MonoBehaviour {
 	private float maxX;
 	private float minZ;
 	private float maxZ;
+	private GameObject scriptsBucket;
+	private StaticData.AvailableGameStates gameState;
 
 	// Use this for initialization
 	void Start () {
+		scriptsBucket = GameObject.Find ("ScriptsBucket");
+		scriptsBucket.GetComponent<GameStatesManager> ().MenuGameState.AddListener(OnMenu);
+		scriptsBucket.GetComponent<GameStatesManager> ().StartingGameState.AddListener(OnStarting);
+		scriptsBucket.GetComponent<GameStatesManager> ().PlayingGameState.AddListener(OnPlaying);
+		scriptsBucket.GetComponent<GameStatesManager> ().PausedGameState.AddListener(OnPausing);
+		SetCanvasState (scriptsBucket.GetComponent<GameStatesManager> ().gameState);
 		cam = this.gameObject.GetComponent<Camera> ();
 		GridGraph gridGraph = AstarPath.active.astarData.gridGraph;
 		GridNode[] gn = gridGraph.nodes;
@@ -38,14 +46,16 @@ public class CameraManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetAxis("Vertical") != 0) {
-			MoveVertical ();
-		}
-		if (Input.GetAxis("Horizontal") != 0) {
-			MoveHorizontal ();
-		}
-		if (Input.GetAxis("Mouse ScrollWheel") != 0){
-			Zoom ();
+		if (gameState == StaticData.AvailableGameStates.Playing) {
+			if (Input.GetAxis("Vertical") != 0) {
+				MoveVertical ();
+			}
+			if (Input.GetAxis("Horizontal") != 0) {
+				MoveHorizontal ();
+			}
+			if (Input.GetAxis("Mouse ScrollWheel") != 0){
+				Zoom ();
+			}
 		}
 	}
 
@@ -71,5 +81,25 @@ public class CameraManager : MonoBehaviour {
 		} else if (Input.GetAxis("Mouse ScrollWheel") < 0 && cam.orthographicSize < maxZoom) {
 			cam.orthographicSize++;
 		}
+	}
+
+	protected void OnMenu() {
+		SetCanvasState (StaticData.AvailableGameStates.Menu);
+	}
+
+	protected void OnStarting() {
+		SetCanvasState (StaticData.AvailableGameStates.Starting);
+	}
+
+	protected void OnPlaying() {
+		SetCanvasState (StaticData.AvailableGameStates.Playing);
+	}
+
+	protected void OnPausing() {
+		SetCanvasState (StaticData.AvailableGameStates.Paused);
+	}
+
+	public void SetCanvasState(StaticData.AvailableGameStates state) {
+		gameState = state;
 	}
 }
