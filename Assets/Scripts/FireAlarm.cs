@@ -16,7 +16,7 @@ public class FireAlarm : MonoBehaviour {
 	private ParticleSystem particleSystem;
 
 	void Start() {
-		scriptsBucket = GameObject.Find ("ScriptsBucket");
+		scriptsBucket = GameObject.Find ("ScriptBucket");
 		scriptsBucket.GetComponent<GameStatesManager> ().MenuGameState.AddListener(OnMenu);
 		scriptsBucket.GetComponent<GameStatesManager> ().StartingGameState.AddListener(OnStarting);
 		scriptsBucket.GetComponent<GameStatesManager> ().PlayingGameState.AddListener(OnPlaying);

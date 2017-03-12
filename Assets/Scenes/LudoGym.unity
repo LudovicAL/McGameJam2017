@@ -584,6 +584,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114545913878131262, guid: 88ec9ea658db9e94d8e2369eb0702092,
+        type: 2}
+      propertyPath: cameraZoomSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114545913878131262, guid: 88ec9ea658db9e94d8e2369eb0702092,
+        type: 2}
+      propertyPath: cameraTranslationSpeedInNodesCount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114545913878131262, guid: 88ec9ea658db9e94d8e2369eb0702092,
+        type: 2}
+      propertyPath: cameraTranslationSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88ec9ea658db9e94d8e2369eb0702092, type: 2}
   m_IsPrefabParent: 0

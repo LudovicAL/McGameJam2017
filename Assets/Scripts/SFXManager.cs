@@ -18,7 +18,7 @@ public class SFXManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		scriptsBucket = GameObject.Find ("ScriptsBucket");
+		scriptsBucket = GameObject.Find ("ScriptBucket");
 		scriptsBucket.GetComponent<GameStatesManager> ().MenuGameState.AddListener(OnMenu);
 		scriptsBucket.GetComponent<GameStatesManager> ().StartingGameState.AddListener(OnStarting);
 		scriptsBucket.GetComponent<GameStatesManager> ().PlayingGameState.AddListener(OnPlaying);

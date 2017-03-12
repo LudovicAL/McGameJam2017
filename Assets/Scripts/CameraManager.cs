@@ -4,7 +4,9 @@ using UnityEngine;
 using Pathfinding;
 
 public class CameraManager : MonoBehaviour {
-	
+
+	public float cameraTranslationSpeed;
+	public int cameraZoomSpeed;
 	public int maxZoom;
 	public int minZoom;
 	private Camera cam;
@@ -42,6 +44,7 @@ public class CameraManager : MonoBehaviour {
 				minZ = ((Vector3)n.position).z;
 			}
 		}
+		cameraTranslationSpeed *= gridGraph.nodeSize;
 	}
 	
 	// Update is called once per frame
@@ -61,25 +64,26 @@ public class CameraManager : MonoBehaviour {
 
 	private void MoveVertical() {
 		if (Input.GetAxis("Vertical") < 0 && this.transform.position.z > minZ) {
-			this.transform.position = this.transform.position + Vector3.back;
+			this.transform.position = this.transform.position + (Vector3.back * cameraTranslationSpeed);
 		} else if (Input.GetAxis("Vertical") > 0 && this.transform.position.z < maxZ) {
-			this.transform.position = this.transform.position + Vector3.forward;
+			this.transform.position = this.transform.position + (Vector3.forward * cameraTranslationSpeed);
 		}
 	}
 
 	private void MoveHorizontal() {
 		if (Input.GetAxis("Horizontal") < 0 && this.transform.position.x > minX) {
-			this.transform.position = this.transform.position + Vector3.left;
+			this.transform.position = this.transform.position + (Vector3.left * cameraTranslationSpeed);
 		} else if (Input.GetAxis("Horizontal") > 0 && this.transform.position.x < maxX) {
-			this.transform.position = this.transform.position + Vector3.right;
+			this.transform.position = this.transform.position + (Vector3.right * cameraTranslationSpeed);
 		}
 	}
 
 	private void Zoom() {
 		if (Input.GetAxis("Mouse ScrollWheel") > 0 && cam.orthographicSize > minZoom) {
-			cam.orthographicSize--;
+			cam.orthographicSize = Mathf.Max (1, cam.orthographicSize - cameraZoomSpeed);
+
 		} else if (Input.GetAxis("Mouse ScrollWheel") < 0 && cam.orthographicSize < maxZoom) {
-			cam.orthographicSize++;
+			cam.orthographicSize = Mathf.Min(maxZoom, cam.orthographicSize + cameraZoomSpeed);
 		}
 	}
 
