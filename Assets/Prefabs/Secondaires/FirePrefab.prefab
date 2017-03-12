@@ -70,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1110548756539334}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -21.635769, y: 0.5, z: -12.141536}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalPosition: {x: -21.635769, y: 5, z: -12.141536}
+  m_LocalScale: {x: 150, y: 150, z: 15}
   m_Children:
   - {fileID: 4035148319300750}
   m_Father: {fileID: 0}
@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 1110548756539334}
-  chanceOfSpreadingToAdjacentTile: 0.2
-  chanceOfSpreadingToNPC: 0.2
+  chanceOfSpreadingToAdjacentTile: 0.5
+  chanceOfSpreadingToNPC: 0.5
   spreadingDelay: 1
-  maxBurningTime: 20
+  maxBurningTime: 5
 --- !u!198 &198357232715375752
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -5541,7 +5541,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 21300008, guid: 6f2c94131488e9e4793baee6a7dc8296, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
