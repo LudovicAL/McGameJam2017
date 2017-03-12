@@ -6,7 +6,7 @@ using Pathfinding;
 public class NodeUtilities {
 
 	private static AstarPath pathEngine = null;
-	private static NavGraph grille = null;
+	private static GridGraph grille = null;
 
 	public static GraphNode DonneNodeAvecPosition(Vector3 pos) {
 		if (pathEngine == null) {
@@ -18,7 +18,7 @@ public class NodeUtilities {
 		contrainte.constrainDistance = true;
 		contrainte.constrainWalkability = true;
 		contrainte.walkable = true;
-		pathEngine.maxNearestNodeDistance = 1;
+		pathEngine.maxNearestNodeDistance = grille.nodeSize;
 		NNInfo info = grille.GetNearestForce (pos, contrainte);
 		pathEngine.maxNearestNodeDistance = maxNearestNodeDistance;
 		return info.node;

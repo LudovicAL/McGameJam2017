@@ -325,7 +325,8 @@ public class AIPath : MonoBehaviour {
 		RotateTowards(targetDirection);
 
 		if (controller != null) {
-			controller.SimpleMove(dir);
+			controller.transform.position += dir;
+			//controller.SimpleMove(dir);
 		} else if (rigid != null) {
 			rigid.AddForce(dir);
 		} else {

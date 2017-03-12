@@ -31,7 +31,7 @@ public class CameraManager : MonoBehaviour {
 		minX = float.MaxValue;
 		maxX = float.MinValue;
 		minZ = float.MaxValue;
-		maxZ = float.MaxValue;
+		maxZ = float.MinValue;
 		foreach (GridNode n in gn) {
 			if (((Vector3)n.position).x < minX){
 				minX = ((Vector3)n.position).x;
@@ -41,7 +41,7 @@ public class CameraManager : MonoBehaviour {
 			if (((Vector3)n.position).z < minZ){
 				minZ = ((Vector3)n.position).z;
 			} else if (((Vector3)n.position).z > maxZ){
-				minZ = ((Vector3)n.position).z;
+				maxZ = ((Vector3)n.position).z;
 			}
 		}
 		cameraTranslationSpeed *= gridGraph.nodeSize;
