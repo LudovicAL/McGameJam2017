@@ -10,15 +10,15 @@ public class Startup : MonoBehaviour {
 	void Start () {
 		AstarPath pathEngine = GameObject.Find ("A*").GetComponent<AstarPath> ();
 		NavGraph graph = pathEngine.graphs [0];
-		NNInfo info = graph.GetNearest (new Vector3 (-49, 0, 15));
-		if (Mathf.Sqrt (VectorMath.SqrDistanceXZ ((Vector3)info.node.position, new Vector3 (-49, 0, 15))) < 1) {
+		Vector3 v = new Vector3 (-5f, 0f, 4f);
+		NNInfo info = graph.GetNearest (v);
+		if (Mathf.Sqrt (VectorMath.SqrDistanceXZ ((Vector3)info.node.position, v)) < 1) {
 			info.node.Tag = 0x1;
-			Debug.Log ("Startup node : " + info.node.GetHashCode ());
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		v = new Vector3 (0f, 0f, -5f);
+		info = graph.GetNearest (v);
+		if (Mathf.Sqrt (VectorMath.SqrDistanceXZ ((Vector3)info.node.position, v)) < 1) {
+			info.node.Tag = 0x1;
+		}
 	}
 }

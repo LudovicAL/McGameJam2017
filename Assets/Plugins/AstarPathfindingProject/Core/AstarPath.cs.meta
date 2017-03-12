@@ -2,8 +2,13 @@ fileFormatVersion: 2
 guid: 78396926cbbfc4ac3b48fc5fc34a87d1
 labels:
 - Pathfinder
+timeCreated: 1489236276
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
-  icon: {instanceID: 0}
+  icon: {fileID: 7707008975528953803, guid: 0000000000000000d000000000000000, type: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
