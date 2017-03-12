@@ -19,6 +19,10 @@ public class AIEvacuation : AIPath {
 
 	public int distanceVision = 5;
 
+	public void SetSignalEvacuation(bool value) {
+		signalEvacuation = value;
+		changementComportement = true;
+	}
 
 	protected override void Start () {
 		base.Start ();
@@ -122,7 +126,8 @@ public class AIEvacuation : AIPath {
 		base.OnTargetReached ();
 		if (!signalAucuneIssue) {
 			if (DonneNodesSorties ().Contains (this.DonneNodeCourant ())) {
-				GameObject.Destroy (this.gameObject);
+				//GameObject.Destroy (this.gameObject);
+				this.gameObject.SetActive(false);
 				Debug.Log ("JE SUIS SAUVÉ!!!");
 			} else {
 				changementComportement = true;
@@ -173,7 +178,7 @@ public class AIEvacuation : AIPath {
 		return lesSorties;
 	}
 
-	protected GraphNode DonneNodeCourant() {
+	public GraphNode DonneNodeCourant() {
 		return NodeUtilities.DonneNodeAvecPosition (transform.position);
 	}
 
