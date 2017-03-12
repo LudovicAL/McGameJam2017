@@ -43,7 +43,7 @@ public class FireIgniter : MonoBehaviour {
 						this.GetComponent<SpriteRenderer> ().sprite = ignitedMatche;
 					} else if (Input.GetMouseButtonUp(0)) {
 						this.GetComponent<SpriteRenderer> ().sprite = matche;
-						GameObject.Instantiate(firePrefab, this.transform.position, Quaternion.LookRotation(Vector3.up));
+						GameObject.Instantiate(firePrefab, this.transform.position, Quaternion.LookRotation(Vector3.down));
 						numberOfIgnitions++;
 					}
 				}

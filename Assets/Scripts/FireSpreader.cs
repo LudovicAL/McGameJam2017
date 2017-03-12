@@ -51,7 +51,7 @@ public class FireSpreader : MonoBehaviour {
 			if (neighborFlammableNodes.Count > 0) {
 				int rndI = Random.Range (0, neighborFlammableNodes.Count - 1);
 				neighborFlammableNodes [rndI].Tag = StaticData.BURNING_GROUND;
-				GameObject.Instantiate (firePrefab, (Vector3)neighborFlammableNodes [rndI].position, Quaternion.LookRotation (Vector3.up));
+				GameObject.Instantiate (firePrefab, (Vector3)neighborFlammableNodes [rndI].position, Quaternion.LookRotation(Vector3.down));
 			} else {
 				DestroyThisComponent();
 			}
