@@ -63,26 +63,30 @@ public class ButtonHandlers : MonoBehaviour {
 		
 		Debug.Log ("nay");
 		ActivatePanel (PANEL_GAME);
-		OnPlaying ();
+		stateMan.ChangeGameState(StaticData.AvailableGameStates.Playing);
 
 	}
 
 	public void Pause()
 	{
+		
 		Debug.Log ("oy");
 		ActivatePanel (PANEL_PAUSE);
-
+		stateMan.ChangeGameState (StaticData.AvailableGameStates.Paused);
 	}
 
 	public void ReturnMM()
 	{
 		Debug.Log ("si");
 		ActivatePanel (PANEL_MENU);
+
 	}
 
 	public void Resume(){
 		Debug.Log ("nonono");
 		ActivatePanel (PANEL_GAME);
+		stateMan.ChangeGameState (StaticData.AvailableGameStates.Paused);
+
 	}
 
 	public void ActivatePanel(int index)
