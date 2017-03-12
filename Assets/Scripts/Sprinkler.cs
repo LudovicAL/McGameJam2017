@@ -8,7 +8,7 @@ public class Sprinkler : MonoBehaviour {
 	// Use this for initialization
 	private GameObject sprinkler;
 
-	GameObject partSys;
+	ParticleSystem partSys;
 
 	void Start () {
 		sprinkler = this.gameObject;
@@ -21,8 +21,8 @@ public class Sprinkler : MonoBehaviour {
 		
 	}
 
-	void ExtinguishFire()
+	private IEnumerator ExtinguishFire()
 	{
-		
+		partSys.Play();
 	}
 }
