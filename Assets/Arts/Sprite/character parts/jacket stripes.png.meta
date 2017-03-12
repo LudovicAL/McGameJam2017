@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: c94debd69086a174cb25066c3d7c880f
-timeCreated: 1489283140
+timeCreated: 1489286686
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: rArm_jacket stripes
+    21300000: rSleeve_jacket stripes
     21300002: body_jacket stripes
-    21300004: lArm_jacket stripes
+    21300004: lSleeve_jacket stripes
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -81,7 +81,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rArm_jacket stripes
+      name: rSleeve_jacket stripes
       rect:
         serializedVersion: 2
         x: 55
@@ -107,7 +107,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: lArm_jacket stripes
+      name: lSleeve_jacket stripes
       rect:
         serializedVersion: 2
         x: 530

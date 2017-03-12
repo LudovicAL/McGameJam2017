@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 41fe31b415d49444c96dbd953b0ef6c8
-timeCreated: 1489282644
+timeCreated: 1489286644
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: rArm_construction
+    21300000: rSleeve_construction
     21300002: body_construction
-    21300004: lArm_construction
+    21300004: lSleeve_construction
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -81,7 +81,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rArm_construction
+      name: rSleeve_construction
       rect:
         serializedVersion: 2
         x: 72
@@ -107,7 +107,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: lArm_construction
+      name: lSleeve_construction
       rect:
         serializedVersion: 2
         x: 533

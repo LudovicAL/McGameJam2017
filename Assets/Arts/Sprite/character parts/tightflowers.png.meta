@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 2caca1cb51d6d954cbd449a49cfdc2b5
-timeCreated: 1489284187
+timeCreated: 1489286776
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: rArm_tightflowers
+    21300000: rSleeve_tightflowers
     21300002: body_tightflowers
-    21300004: lArm_tightflowers
+    21300004: lSleeve_tightflowers
     21300006: tightflowers_3
   serializedVersion: 4
   mipmaps:
@@ -82,7 +82,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rArm_tightflowers
+      name: rSleeve_tightflowers
       rect:
         serializedVersion: 2
         x: 62
@@ -108,11 +108,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: lArm_tightflowers
+      name: lSleeve_tightflowers
       rect:
         serializedVersion: 2
         x: 534
-        y: 129
+        y: 130
         width: 66
         height: 70
       alignment: 9
@@ -129,7 +129,7 @@ TextureImporter:
         width: 7
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

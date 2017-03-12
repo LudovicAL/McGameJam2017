@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 673a2596726ab85469dcf161ce0641c3
-timeCreated: 1489283718
+timeCreated: 1489286714
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: rArm_tailleur
+    21300000: rSleeve_tailleur
     21300002: body_tailleur
-    21300004: lArm_tailleur
+    21300004: lSleeve_tailleur
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -81,7 +81,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rArm_tailleur
+      name: rSleeve_tailleur
       rect:
         serializedVersion: 2
         x: 55
@@ -107,7 +107,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: lArm_tailleur
+      name: lSleeve_tailleur
       rect:
         serializedVersion: 2
         x: 520

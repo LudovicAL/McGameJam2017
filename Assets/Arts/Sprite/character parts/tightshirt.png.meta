@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 69bcc852c4878704d83fc4da3d8765ec
-timeCreated: 1489284252
+timeCreated: 1489286752
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: rArm_tightshirt
+    21300000: rSleeve_tightshirt
     21300002: body_tightshirt
-    21300004: lArm_tightshirt
+    21300004: lSleeve_tightshirt
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -81,7 +81,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rArm_tightshirt
+      name: rSleeve_tightshirt
       rect:
         serializedVersion: 2
         x: 69
@@ -107,7 +107,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: lArm_tightshirt
+      name: lSleeve_tightshirt
       rect:
         serializedVersion: 2
         x: 531

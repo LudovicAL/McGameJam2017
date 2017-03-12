@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 4c54af9fdee51994984f2a0812676ae3
-timeCreated: 1489282712
+timeCreated: 1489286667
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: rArm_deathbyfire
+    21300000: rSleeve_deathbyfire
     21300002: body_deathbyfire
-    21300004: lArm_deathbyfire
+    21300004: lSleeve_deathbyfire
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -81,7 +81,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rArm_deathbyfire
+      name: rSleeve_deathbyfire
       rect:
         serializedVersion: 2
         x: 71
@@ -107,11 +107,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: lArm_deathbyfire
+      name: lSleeve_deathbyfire
       rect:
         serializedVersion: 2
         x: 502
-        y: 66
+        y: 67
         width: 80
         height: 133
       alignment: 9
