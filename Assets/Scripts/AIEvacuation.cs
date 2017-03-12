@@ -199,12 +199,17 @@ public class AIEvacuation : AIPath {
 
 	protected IEnumerable<GraphNode> DonneListeDangerVisible()
 	{
-		List<GraphNode> nodes = PathUtilities.BFS (DonneNodeCourant (), this.distanceVision);
+		GraphNode nodeCourant = DonneNodeCourant ();
 		IEnumerable<GraphNode> filteredNodes;
-		if (path != null) {
-			filteredNodes = nodes.Intersect (this.path.path);
+		if (nodeCourant != null) {
+			List<GraphNode> nodes = PathUtilities.BFS (DonneNodeCourant (), this.distanceVision);
+			if (path != null) {
+				filteredNodes = nodes.Intersect (this.path.path);
+			} else {
+				filteredNodes = nodes;
+			}
 		} else {
-			filteredNodes = nodes;
+			filteredNodes = new List<GraphNode> ();
 		}
 		return filteredNodes.Where(x => (x.Tag & StaticData.BURNING_GROUND) == StaticData.BURNING_GROUND);
 	}
