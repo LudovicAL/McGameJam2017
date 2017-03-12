@@ -319,10 +319,12 @@ public class AIPath : MonoBehaviour {
 	public virtual void Update () {
 		if (!canMove) { return; }
 
-		Vector3 dir = CalculateVelocity(GetFeetPosition());
+		//Vector3 dir = CalculateVelocity(GetFeetPosition());
+		float dirMagnitude = CalculateVelocity(GetFeetPosition()).magnitude;
+		Vector3 dir = ((target.position - tr.position).normalized) * dirMagnitude;
 
 		//Rotate towards targetDirection (filled in by CalculateVelocity)
-		RotateTowards(targetDirection);
+		//RotateTowards(targetDirection);
 
 		if (controller != null) {
 			controller.transform.position += dir;
