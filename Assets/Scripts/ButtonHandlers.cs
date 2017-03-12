@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonHandlers : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class ButtonHandlers : MonoBehaviour {
 	const int PANEL_PAUSE = 1;
 	const int PANEL_GAME = 2;
 
+	public GameObject fireIgniterPrefab;
 	public GameObject[] panelArray;
 	private GameStatesManager stateMan;
 	private GameObject scriptsBucket;
@@ -25,29 +27,25 @@ public class ButtonHandlers : MonoBehaviour {
 	}
 
 	public void Exit(){
-		//Debug.Log ("yay");
 		Application.Quit ();
 	}
 	public void StartGame() {
-		//Debug.Log ("nay");
 		ActivatePanel (PANEL_GAME);
 		stateMan.ChangeGameState(StaticData.AvailableGameStates.Playing);
+		GameObject.Instantiate (fireIgniterPrefab, Vector3.zero, Quaternion.identity);
 	}
 
 	public void Pause() {
-		//Debug.Log ("oy");
 		ActivatePanel (PANEL_PAUSE);
 		stateMan.ChangeGameState (StaticData.AvailableGameStates.Paused);
 	}
 
 	public void ReturnMM() {
-		//Debug.Log ("si");
-		ActivatePanel (PANEL_MENU);
-		stateMan.ChangeGameState (StaticData.AvailableGameStates.Menu);
+		Scene scene = SceneManager.GetActiveScene();
+		SceneManager.LoadScene(scene.name);
 	}
 
 	public void Resume(){
-		//Debug.Log ("nonono");
 		ActivatePanel (PANEL_GAME);
 		stateMan.ChangeGameState (StaticData.AvailableGameStates.Playing);
 	}
