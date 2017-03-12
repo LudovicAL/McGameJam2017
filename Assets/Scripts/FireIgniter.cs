@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class FireIgniter : MonoBehaviour {
 
-	public Sprite firePrefab;
+	public GameObject firePrefab;
 	public Sprite matche;
 	public Sprite ignitedMatche;
 	public int maxNumberOfIgnitions;
@@ -29,26 +29,28 @@ public class FireIgniter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//if (gameState == StaticData.AvailableGameStates.Playing) {
-			if (numberOfIgnitions < maxNumberOfIgnitions) {
-				RaycastHit hit;
-				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-				if(Physics.Raycast(ray, out hit)) {
-					NNConstraint contrainte = new NNConstraint();
-					contrainte.constrainWalkability = true;
-					contrainte.walkable = true;
-					NNInfo info = gridGraph.GetNearestForce (hit.point, contrainte);
-					if (info.node != null) {
-						this.transform.position = (Vector3)info.node.position;
-						if (Input.GetMouseButtonDown(0)) {
-							//this.GetComponent<SpriteRenderer> ().sprite = ignitedMatche;
-						} else if (Input.GetMouseButtonUp(0)) {
-							//this.GetComponent<SpriteRenderer> ().sprite = matche;
-							GameObject.Instantiate(firePrefab, this.transform.position, Quaternion.LookRotation(Vector3.up));
-							numberOfIgnitions++;
-						}
+		if (numberOfIgnitions < maxNumberOfIgnitions) {
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			if(Physics.Raycast(ray, out hit)) {
+				NNConstraint contrainte = new NNConstraint();
+				contrainte.constrainWalkability = true;
+				contrainte.walkable = true;
+				NNInfo info = gridGraph.GetNearestForce (hit.point, contrainte);
+				if (info.node != null) {
+					this.transform.position = (Vector3)info.node.position;
+					if (Input.GetMouseButtonDown(0)) {
+						this.GetComponent<SpriteRenderer> ().sprite = ignitedMatche;
+					} else if (Input.GetMouseButtonUp(0)) {
+						this.GetComponent<SpriteRenderer> ().sprite = matche;
+						GameObject.Instantiate(firePrefab, this.transform.position, Quaternion.LookRotation(Vector3.up));
+						numberOfIgnitions++;
 					}
 				}
 			}
+		} else {
+			Destroy (this.gameObject);
+		}
 		//}
 	}
 

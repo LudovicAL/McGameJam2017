@@ -115,10 +115,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 1110548756539334}
-  chanceOfSpreadingToAdjacentTile: 0.05
+  chanceOfSpreadingToAdjacentTile: 0.2
   chanceOfSpreadingToNPC: 0.2
-  spreadingDelay: 3
-  maxBurningTime: 15
+  spreadingDelay: 1
+  maxBurningTime: 5
 --- !u!198 &198357232715375752
 ParticleSystem:
   m_ObjectHideFlags: 1

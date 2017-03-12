@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System.Linq;
 
 public class FireSpreader : MonoBehaviour {
 
@@ -14,16 +15,13 @@ public class FireSpreader : MonoBehaviour {
 	private float timeSinceLastSpread;
 	private GraphNode currentNode;
 	private GridGraph gridGraph;
-	private List<GraphNode> neighborNodes;
+	private List<GraphNode> neighborFlammableNodes;
 
 	void Start() {
 		gridGraph = AstarPath.active.astarData.gridGraph;
 		currentNode = gridGraph.GetNearest (transform.position).node;
-		int[] neighborNodesOffsets = gridGraph.neighbourOffsets;
-		neighborNodes = new List<GraphNode> ();
-		foreach (int nno in neighborNodesOffsets) {
-			neighborNodes.Add(gridGraph.nodes[currentNode.NodeIndex + nno]);
-		}
+		currentNode.Tag = StaticData.BURNING_GROUND;
+		neighborFlammableNodes = PathUtilities.BFS (currentNode, 1);
 		endTime = Time.time + maxBurningTime;
 		timeSinceLastSpread = 0.0f;
 		chanceOfSpreadingToAdjacentTile = Mathf.Clamp (chanceOfSpreadingToAdjacentTile, 0.0f, 1.0f);
@@ -34,20 +32,35 @@ public class FireSpreader : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Time.time > endTime){
-			Destroy (this);
+			DestroyThisComponent();
 		} else {
 			timeSinceLastSpread += Time.deltaTime;
-			if (timeSinceLastSpread < spreadingDelay) {
+			if (timeSinceLastSpread > spreadingDelay) {
 				SpreadToNeighbor ();
 				timeSinceLastSpread = 0.0f;
 			}
 		}
 	}
 
-	private void SpreadToNeighbor(){
-		float rndF = Random.Range (0.0f, 1.0f);
-		if (rndF <= chanceOfSpreadingToAdjacentTile) {	//Fire is spreading!
-			
+	private void SpreadToNeighbor() {
+		float rndf = Random.Range (0.0f, 1.0f);
+		if (rndf <= chanceOfSpreadingToAdjacentTile) {	//Fire is spreading!
+			List<GraphNode> neighborBurningNodes = PathUtilities.BFS (currentNode, 1, StaticData.BURNING_GROUND);
+			List<GraphNode> neighborBurntNodes = PathUtilities.BFS (currentNode, 1, StaticData.BURNT_GROUND);
+			neighborFlammableNodes = neighborFlammableNodes.Except (neighborBurningNodes).ToList ().Except (neighborBurntNodes).ToList ();
+			if (neighborFlammableNodes.Count > 0) {
+				int rndI = Random.Range (0, neighborFlammableNodes.Count - 1);
+				neighborFlammableNodes [rndI].Tag = StaticData.BURNING_GROUND;
+				GameObject.Instantiate (firePrefab, (Vector3)neighborFlammableNodes [rndI].position, Quaternion.LookRotation (Vector3.up));
+			} else {
+				DestroyThisComponent();
+			}
 		}
+	}
+
+	private void DestroyThisComponent() {
+		currentNode.Tag ^= StaticData.BURNING_GROUND;
+		currentNode.Tag = StaticData.BURNT_GROUND;
+		Destroy (this.gameObject);
 	}
 }

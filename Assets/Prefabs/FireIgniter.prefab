@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114899297224939170}
   - component: {fileID: 212461420267792852}
   m_Layer: 0
-  m_Name: FireIgniterPrefab
+  m_Name: FireIgniter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,6 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a0de02a440d934e9b058de96fdff19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firePrefab: {fileID: 1110548756539334, guid: a1139e5611165fa48807f189d93cf45a, type: 2}
+  matche: {fileID: 21300000, guid: e8d858915de57424380aec7004c65e45, type: 3}
+  ignitedMatche: {fileID: 21300000, guid: b4f49ae5e027cab49a3c705ff3eafb84, type: 3}
   maxNumberOfIgnitions: 3
 --- !u!212 &212461420267792852
 SpriteRenderer:
@@ -84,7 +87,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b4f49ae5e027cab49a3c705ff3eafb84, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8d858915de57424380aec7004c65e45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

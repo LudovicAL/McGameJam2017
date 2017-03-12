@@ -82,7 +82,6 @@ MonoBehaviour:
     _MeshColor: {r: 0.125, g: 0.686, b: 0, a: 0.19}
     _AreaColors: []
   tagNames:
-  - Basic Ground
   - Burning Ground
   - Burnt Ground
   - Obstacle
@@ -93,6 +92,7 @@ MonoBehaviour:
   - Wall
   - Stair
   - Exterior
+  - 10
   - 11
   - 12
   - 13
