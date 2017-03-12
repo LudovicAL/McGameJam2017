@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 845f1235b22034c83870d57c15dcabe0
-timeCreated: 1489329961
+guid: fc37eec4afa28b84d8530271b5f9ce16
+timeCreated: 1489330714
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Cubicule_Room_L1_001_0
-    21300002: Cubicule_Room_L1_001_1
-    21300004: Cubicule_Room_L1_001_2
-    21300006: Cubicule_Room_L1_001_3
+    21300000: Board_Room_L1_001 - Copy_0
+    21300002: Board_Room_L1_001 - Copy_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -38,13 +36,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -82,12 +80,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cubicule_Room_L1_001_0
+      name: Board_Room_L1_001 - Copy_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 508
+        width: 384
         height: 387
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -95,38 +93,12 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Cubicule_Room_L1_001_1
+      name: Board_Room_L1_001 - Copy_1
       rect:
         serializedVersion: 2
-        x: 380
-        y: 2
-        width: 317
-        height: 385
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Cubicule_Room_L1_001_2
-      rect:
-        serializedVersion: 2
-        x: 697
+        x: 384
         y: 0
-        width: 846
-        height: 383
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Cubicule_Room_L1_001_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1550
+        width: 390
         height: 387
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 
 public class Sprinkler : MonoBehaviour {
 
@@ -29,7 +28,6 @@ public class Sprinkler : MonoBehaviour {
 		partSys.Play();
 
 		yield return new WaitForSeconds (3);
-		int temp = 0;
 		flems = GameObject.FindGameObjectsWithTag ("Fire");
 		foreach(GameObject feu in flems)
 		{
@@ -39,7 +37,7 @@ public class Sprinkler : MonoBehaviour {
 				feu.GetComponent<FireSpreader> ().PutOutFire();
 			}
 
-		}
+		}partSys.Stop ();
 	}
 
 	 
