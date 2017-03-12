@@ -6,7 +6,7 @@ public class SpriteRand : MonoBehaviour {
 
 	// Use this for initialization
 
-	List<Sprite> bodyList = new List<Sprite>();
+	public Sprite[] body = new Sprite[];
 	void Start () {
 		
 	}
