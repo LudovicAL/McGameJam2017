@@ -6,8 +6,6 @@ using System.Linq;
 using System.Collections.Generic;
 public class AIEvacuation : AIPath {
 	private GameObject sorties;
-	private AstarPath pathEngine;
-	private NavGraph grille;
 	private List<GraphNode> dangersConnus;
 	private Seeker chercheur;
 	private Path cheminEnCours;
@@ -16,6 +14,8 @@ public class AIEvacuation : AIPath {
 	private GameObject cibleIdle;
 	private bool changementComportement;
 	private float originalSpeed;
+	private StaticData.AvailableGameStates gameState;
+	private GameObject scriptBucket;
 
 	public int distanceVision = 5;
 
@@ -23,8 +23,6 @@ public class AIEvacuation : AIPath {
 	protected override void Start () {
 		base.Start ();
 		sorties = GameObject.Find ("Sorties de secours");
-		pathEngine = GameObject.Find ("A*").GetComponent<AstarPath> ();
-		grille = pathEngine.graphs[0];
 		dangersConnus = new List<GraphNode> ();
 		chercheur = this.gameObject.AddComponent<Seeker> ();
 		cheminEnCours = null;
@@ -33,6 +31,12 @@ public class AIEvacuation : AIPath {
 		cibleIdle = new GameObject ();
 		changementComportement = true;
 		this.originalSpeed = speed;
+		scriptBucket = GameObject.Find ("ScriptBucket");
+		GameStatesManager mgr = scriptBucket.GetComponent<GameStatesManager> ();
+		mgr.MenuGameState.AddListener (OnMenu);
+		mgr.StartingGameState.AddListener (OnStart);
+		mgr.PlayingGameState.AddListener (OnPlay);
+		mgr.PausedGameState.AddListener (OnPause);
 	}
 
 	protected void ComportementSortiePlusProche() {
@@ -81,16 +85,18 @@ public class AIEvacuation : AIPath {
 	}
 
 	public override void Update () {
-		if (changementComportement) {
-			changementComportement = false;
-			if (signalEvacuation) {
-				ComportementEvacuation ();
-			} else {
-				ComportementIdle ();
+		if (gameState == StaticData.AvailableGameStates.Playing) {
+			if (changementComportement) {
+				changementComportement = false;
+				if (signalEvacuation) {
+					ComportementEvacuation ();
+				} else {
+					ComportementIdle ();
+				}
 			}
+			ChercherDuDanger ();
+			base.Update ();
 		}
-		ChercherDuDanger ();
-		base.Update ();
 	}
 
 	/** Requests a path to the target */
@@ -181,6 +187,26 @@ public class AIEvacuation : AIPath {
 			filteredNodes = nodes;
 		}
 		return filteredNodes.Where(x => (x.Tag & 0x1) == 0x1);
+	}
+
+	public void OnMenu() {
+		SetCanvasState (StaticData.AvailableGameStates.Menu);
+	}
+
+	public void OnStart() {
+		SetCanvasState (StaticData.AvailableGameStates.Starting);
+	}
+
+	public void OnPlay() {
+		SetCanvasState (StaticData.AvailableGameStates.Playing);
+	}
+
+	public void OnPause() {
+		SetCanvasState (StaticData.AvailableGameStates.Paused);
+	}
+
+	public void SetCanvasState(StaticData.AvailableGameStates state) {
+		gameState = state;
 	}
 } 
 // Comportement en absence de dangers
