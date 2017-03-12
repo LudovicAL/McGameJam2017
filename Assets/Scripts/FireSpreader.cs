@@ -52,6 +52,10 @@ public class FireSpreader : MonoBehaviour {
 		}
 	}
 
+	public void PutOutFire() {
+		DestroyThisComponent();
+	}
+
 	private void SpreadToNeighbor() {
 		float rndf = Random.Range (0.0f, 1.0f);
 		if (rndf <= chanceOfSpreadingToAdjacentTile) {	//Fire is spreading!
