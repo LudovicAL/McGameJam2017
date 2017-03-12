@@ -8,17 +8,13 @@ public class Startup : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		AstarPath pathEngine = GameObject.Find ("A*").GetComponent<AstarPath> ();
-		NavGraph graph = pathEngine.graphs [0];
-		Vector3 v = new Vector3 (-5f, 0f, 4f);
-		NNInfo info = graph.GetNearest (v);
-		if (Mathf.Sqrt (VectorMath.SqrDistanceXZ ((Vector3)info.node.position, v)) < 1) {
-			info.node.Tag = 0x1;
-		}
-		v = new Vector3 (0f, 0f, -5f);
-		info = graph.GetNearest (v);
-		if (Mathf.Sqrt (VectorMath.SqrDistanceXZ ((Vector3)info.node.position, v)) < 1) {
-			info.node.Tag = 0x1;
+		GameObject dangers = GameObject.Find ("Dangers");
+		for (int i = 0, n = dangers.transform.childCount; i < n; ++i) {
+			Transform danger = dangers.transform.GetChild (i);
+			if (danger.gameObject.activeInHierarchy) {
+				GraphNode node = NodeUtilities.DonneNodeAvecPosition (danger.position);
+				node.Tag |= StaticData.BURNING_GROUND;
+			}
 		}
 	}
 }

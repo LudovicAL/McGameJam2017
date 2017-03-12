@@ -38,11 +38,7 @@ public class AIEvacuation : AIPath {
 	protected void ComportementSortiePlusProche() {
 		if (sorties.transform.childCount > 0) {
 			Debug.Log ("Comportement Sortie la plus proche.");
-			List<GameObject> lesSorties = new List<GameObject> ();
-			for (int i = 0, n = sorties.transform.childCount; i < n; ++i) {
-				lesSorties.Add (sorties.transform.GetChild (i).gameObject);
-			}
-			AllerVersSortieLaPlusProche (lesSorties);
+			AllerVersSortieLaPlusProche (this.DonneObjetsSorties());
 		} else {
 			signalAucuneIssue = true;
 			changementComportement = true;
@@ -65,11 +61,11 @@ public class AIEvacuation : AIPath {
 
 	protected void ComportementIdle() {
 		Debug.Log ("Comportement Idle.");
-		List<GraphNode> nodes = PathUtilities.BFS (DonneNodeCourant (), this.distanceVision);
+		List<GraphNode> nodes = PathUtilities.BFS (DonneNodeCourant (), this.distanceVision * 2);
 		int index = Random.Range (0, nodes.Count);
 		cibleIdle.transform.position = (Vector3)nodes [index].position;
 		this.target = cibleIdle.transform;
-		this.speed = Random.Range (1, this.originalSpeed);
+		this.speed = Random.Range (1, (int)(this.originalSpeed * 0.75));
 	}
 
 	protected void ChercherDuDanger() {
@@ -119,12 +115,17 @@ public class AIEvacuation : AIPath {
 	public override void OnTargetReached () {
 		base.OnTargetReached ();
 		if (!signalAucuneIssue) {
-			changementComportement = true;
+			if (DonneNodesSorties ().Contains (this.DonneNodeCourant ())) {
+				GameObject.Destroy (this.gameObject);
+				Debug.Log ("JE SUIS SAUVÉ!!!");
+			} else {
+				changementComportement = true;
+			}
 		}
 	}
 
 	protected void AllerVersSortieLaPlusProche(IEnumerable<GameObject> sorties) {
-		IEnumerable<Vector3> positions = sorties.Select (x => (Vector3)this.DonneNodeAvecPosition (x.transform.position).position);
+		IEnumerable<Vector3> positions = sorties.Select (x => (Vector3)NodeUtilities.DonneNodeAvecPosition (x.transform.position).position);
 		IEnumerator<GameObject> eSorties = sorties.GetEnumerator ();
 		IEnumerator<Vector3> ePositions = positions.GetEnumerator ();
 		Path bestPath = cheminEnCours;
@@ -154,20 +155,20 @@ public class AIEvacuation : AIPath {
 		}
 	}
 
-	protected GraphNode DonneNodeAvecPosition(Vector3 pos) {
-		float maxNearestNodeDistance = pathEngine.maxNearestNodeDistance;
-		NNConstraint contrainte = new NNConstraint ();
-		contrainte.constrainDistance = true;
-		contrainte.constrainWalkability = true;
-		contrainte.walkable = true;
-		pathEngine.maxNearestNodeDistance = 1;
-		NNInfo info = grille.GetNearestForce (pos, contrainte);
-		pathEngine.maxNearestNodeDistance = maxNearestNodeDistance;
-		return info.node;
+	protected IEnumerable<GraphNode> DonneNodesSorties() {
+		return DonneObjetsSorties().Select (x => NodeUtilities.DonneNodeAvecPosition (x.transform.position));
+	}
+
+	protected List<GameObject> DonneObjetsSorties() {
+		List<GameObject> lesSorties = new List<GameObject> ();
+		for (int i = 0, n = sorties.transform.childCount; i < n; ++i) {
+			lesSorties.Add (sorties.transform.GetChild (i).gameObject);
+		}
+		return lesSorties;
 	}
 
 	protected GraphNode DonneNodeCourant() {
-		return DonneNodeAvecPosition (transform.position);
+		return NodeUtilities.DonneNodeAvecPosition (transform.position);
 	}
 
 	protected IEnumerable<GraphNode> DonneListeDangerVisible()
